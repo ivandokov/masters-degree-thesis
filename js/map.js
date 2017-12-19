@@ -2,7 +2,10 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         center: {lat: 43.466658, lng: 28.468913},
-        zoom: 12
+        zoom: 12,
+        scaleControl: true,
+        streetViewControl: false,
+        fullscreenControl: false
     });
 
     loadPlaces(function (data) {
