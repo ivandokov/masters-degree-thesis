@@ -4,5 +4,9 @@
 }
 
 .gm-style-iw {
+    max-width: 500px;
+}
+.gm-style-iw img {
     max-width: 300px;
+    max-height: 190px;
 }
