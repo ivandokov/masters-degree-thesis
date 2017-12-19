@@ -1,4 +1,8 @@
 #map {
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
+}
+
+.gm-style-iw {
+    max-width: 300px;
 }

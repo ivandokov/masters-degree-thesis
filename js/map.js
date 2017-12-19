@@ -1,46 +1,45 @@
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,
-        center: {lat: 43.4322045, lng: 28.3385676}
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: {lat: 43.5422471, lng: 28.45926},
+        zoom: 11
     });
 
     loadPlaces(function (data) {
-        addMarkers(map, data.places);
-    })
+        var infoWindow = new google.maps.InfoWindow();
 
+        for (var i = 0; i < data.places.length; i++) {
+            addMarker(map, data.places[i], infoWindow);
+        }
+    }.bind(this));
 }
 
 function loadPlaces(callback) {
     $.getJSON('./places.json').then(callback);
 }
 
-function addMarkers(map, places) {
-    for (var i = 0; i < places.length; i++) {
-        var place = places[i];
-        var infoWindow = window.infoWindow(place);
-        var marker = new google.maps.Marker({
-            position: {lat: place.lat, lng: place.lng},
-            map: map,
-            title: place.name,
-            zIndex: place.index,
-            animation: google.maps.Animation.DROP
-        });
-        marker.addListener('click', function() {
-            infoWindow.open(map, marker);
-        });
-    }
-}
+function addMarker(map, place, infoWindow) {
+    var marker = new google.maps.Marker({
+        position: {lat: place.lat, lng: place.lng},
+        map: map,
+        title: place.name,
+        zIndex: place.index,
+        animation: google.maps.Animation.DROP
+    });
 
-function infoWindow(place) {
-    var contentString = '<div>'+
+    google.maps.event.addListener(marker, 'click', function () {
+        var content = '<div>'+
+            '<div class="mb-2"><img src="'+ place.image +'"></div>'+
             '<h5>'+ place.name +'</h5>'+
             '<div>'+
-                '<p>'+ place.description + '</p>' +
-                '<p class="mb-0"><a href="'+ place.moreInfoUrl +'" target="_blank">Повече информация</a></p>'+
+            '<p>'+ place.description + '</p>' +
+            '<p class="mb-0"><a href="'+ place.moreInfoUrl +'" target="_blank">Повече информация</a></p>'+
             '</div>'+
-        '</div>';
-
-    return new google.maps.InfoWindow({
-        content: contentString
+            '</div>';
+        infoWindow.close();
+        infoWindow.setContent(content);
+        setTimeout(function() {
+            infoWindow.open(map, marker);
+        }, 60);
     });
 }
