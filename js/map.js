@@ -1,8 +1,12 @@
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
         center: {lat: 43.466658, lng: 28.468913},
         zoom: 12,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+        },
         scaleControl: true,
         streetViewControl: false,
         fullscreenControl: false
