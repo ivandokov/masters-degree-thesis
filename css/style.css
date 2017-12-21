@@ -14,13 +14,14 @@
 #legend {
     position: absolute;
     z-index: 2;
-    bottom: 23px;
+    bottom: 24px;
     right: 60px;
     width: 500px;
     padding: 10px;
     background: #fff;
     user-select: none;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    border-radius: 2px;
     font-size: 12px;
 }
 
