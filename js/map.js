@@ -1,3 +1,5 @@
+var latestIndex = 100;
+
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         mapTypeId: google.maps.MapTypeId.TERRAIN,
@@ -13,7 +15,9 @@ function initMap() {
     });
 
     loadPlaces(function (data) {
-        var infoWindow = new google.maps.InfoWindow();
+        var infoWindow = new google.maps.InfoWindow({
+            pixelOffset: new google.maps.Size(-1,-40)
+        });
 
         for (var i = 0; i < data.places.length; i++) {
             addMarker(map, data.places[i], infoWindow);
@@ -26,15 +30,26 @@ function loadPlaces(callback) {
 }
 
 function addMarker(map, place, infoWindow) {
-    var marker = new google.maps.Marker({
-        position: {lat: place.lat, lng: place.lng},
+    var markerWidth = 26;
+    var markerHeight = 40;
+    var marker = new SVGMarker({
+        position: new google.maps.LatLng(place.lat, place.lng),
         map: map,
         title: place.name,
         zIndex: place.index,
-        animation: google.maps.Animation.DROP
+        animation: google.maps.Animation.DROP,
+        icon: {
+            url: place.icon,
+            size: new google.maps.Size(markerWidth, markerHeight),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(markerWidth/2, markerHeight)
+        }
     });
 
-    google.maps.event.addListener(marker, 'click', function () {
+    google.maps.event.addListener(marker, 'click', function (e) {
+        e.stopPropagation();
+        marker.setZIndex(latestIndex);
+        latestIndex += 1;
         var content = '<div>'+
             '<div class="mb-2"><img src="'+ place.image +'"></div>'+
             '<h5>'+ place.name +'</h5>'+
