@@ -34,12 +34,15 @@
     width: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     #legend .legend-content, #legend .close {
         display: none;
     }
 
     #legend {
+        top: 10px;
+        right: 25px;
+        bottom: auto;
         width: auto;
     }
 
@@ -61,7 +64,7 @@
 
 #legend h1, #legend h2 {
     margin-bottom: 0;
-    padding-bottom: 5px;
+    padding-bottom: 0;
 }
 
 #legend h1 {
