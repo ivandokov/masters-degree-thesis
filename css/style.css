@@ -16,7 +16,8 @@
     z-index: 2;
     bottom: 24px;
     right: 60px;
-    width: 500px;
+    width: calc(100% - 60px);
+    max-width: 500px;
     padding: 10px;
     background: #fff;
     user-select: none;
@@ -25,11 +26,18 @@
     font-size: 12px;
 }
 
-#legend h1 {
-    font-size: 16px;
+#legend h1, #legend h2 {
     margin-bottom: 0;
     padding-bottom: 5px;
+}
+
+#legend h1 {
+    font-size: 16px;
     border-bottom: 1px solid #212529;
+}
+
+#legend h2 {
+    font-size: 13px;
 }
 
 #legend img {
