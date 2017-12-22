@@ -55,6 +55,12 @@
     }
 }
 
+@media screen and (max-width: 610px) {
+    #legend:target {
+        width: calc(100% - 115px);
+    }
+}
+
 #legend a {
     color: inherit;
 }
