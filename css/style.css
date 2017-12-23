@@ -57,7 +57,7 @@
 
 @media screen and (max-width: 610px) {
     #legend:target {
-        width: calc(100% - 115px);
+        width: calc(100% - 135px);
     }
 }
 
