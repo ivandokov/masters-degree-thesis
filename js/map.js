@@ -1,10 +1,11 @@
 var latestIndex = 100;
 
 function initMap() {
+    var zoom = window.width > 992 ? 12 : 10;
     var map = new google.maps.Map(document.getElementById('map'), {
         mapTypeId: google.maps.MapTypeId.TERRAIN,
         center: {lat: 43.466658, lng: 28.468913},
-        zoom: 12,
+        zoom: zoom,
         mapTypeControl: true,
         mapTypeControlOptions: {
             style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
