@@ -149,6 +149,26 @@
             "description": "Фарът на нос Шабла е най-старият и най-високият у нас – цели 32 метра. Шабленци не без гордост споделят, че притежават умалено копие на едно от седемте чудеса на древния свят – Александрийския фар. (shabla.be)",
             "moreInfoUrl": "http://shabla.be/region/nos_shabla/",
             "image": "http://shabla.be/wp-content/uploads/2010/05/far_shabla_lodka.jpg"
+        },
+        {
+            "lat": 43.435890,
+            "lng": 28.339939,
+            "index": 2,
+            "icon": "img/monument.svg",
+            "name": "Паметник на Рони Джеймс Дио",
+            "description": "Вокалистът на \"Елф\", \"Рейнбоу\", \"Блек Сабат\", \"Дио\", който си отиде от този свят през май 2010 т.г., радваше публиката на сцената на \"Каварна рок фест\" и на новогодишни тържества в градчето. (vesti.bg)",
+            "moreInfoUrl": "https://www.vesti.bg/razvlechenia/kultura/roni-dzhejms-dio-pak-e-v-kavarna-3351211",
+            "image": "http://m4.netinfo.bg/media/images/7295/7295399/655-402-pametnikyt-na-roni-dzhejms-dio-v-aleiata-na-roka-v.jpg"
+        },
+        {
+            "lat": 43.435845,
+            "lng": 28.339895,
+            "index": 1,
+            "icon": "img/monument.svg",
+            "name": "Паметник на Георги Минчев",
+            "description": "Паметник на основоположника на българския рок Георги Минчев (dariknews.bg)",
+            "moreInfoUrl": "https://dariknews.bg/regioni/dobrich/otkriha-pametnika-na-georgi-minchev-v-kavarna-1094452",
+            "image": "http://m.netinfo.bg/media/images/29104/29104123/640-420-otkriha-pametnika-na-georgi-minchev-v-kavarna.jpg"
         }
     ]
 }
