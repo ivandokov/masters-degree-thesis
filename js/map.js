@@ -47,7 +47,6 @@ function addMarker(map, place, infoWindow) {
         map: map,
         title: place.name,
         zIndex: place.index,
-        animation: google.maps.Animation.DROP,
         icon: {
             url: place.icon,
             size: new google.maps.Size(markerWidth, markerHeight),
