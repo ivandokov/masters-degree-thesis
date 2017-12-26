@@ -1,7 +1,7 @@
 var latestIndex = 100;
 
 function initMap() {
-    var zoom = window.width > 992 ? 12 : 10;
+    var zoom = screen.width > 992 ? 12 : 10;
     var map = new google.maps.Map(document.getElementById('map'), {
         mapTypeId: google.maps.MapTypeId.TERRAIN,
         center: {lat: 43.466658, lng: 28.468913},
@@ -27,7 +27,16 @@ function initMap() {
 }
 
 function loadPlaces(callback) {
-    $.getJSON('./places.json').then(callback);
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === 4) {
+            if (httpRequest.status === 200) {
+                callback(JSON.parse(httpRequest.responseText));
+            }
+        }
+    };
+    httpRequest.open('GET', './places.json');
+    httpRequest.send();
 }
 
 function addMarker(map, place, infoWindow) {
