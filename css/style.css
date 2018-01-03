@@ -32,6 +32,7 @@
 
 #close:target #legend {
     width: auto;
+    min-width: 90px;
 }
 
 @media screen and (max-width: 992px) {
