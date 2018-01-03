@@ -71,10 +71,10 @@
             "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Nos_Kaliakra.jpg"
         },
         {
-            "lat": 43.382938,
-            "lng": 28.470280,
+            "lat": 43.383138,
+            "lng": 28.470580,
             "index": 1,
-            "icon": "img/lighthouse.svg",
+            "icon": "img/reserve.svg",
             "name": "Местност \"Болата\"",
             "description": "Болата е местност, разположена на едноименния залив и е част от резерват Калиакра. Намира се в северната част на Българското Черноморие край село Българево и в близост до бивша военна станция. (Wikipedia)",
             "moreInfoUrl": "https://bg.wikipedia.org/wiki/%D0%91%D0%BE%D0%BB%D0%B0%D1%82%D0%B0",
